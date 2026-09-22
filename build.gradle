@@ -1,0 +1,79 @@
+plugins {
+    id 'eclipse'
+    id 'idea'
+    id 'maven-publish'
+    id 'net.minecraftforge.gradle' version '[6.0,6.2)'
+}
+
+version = '0.1'
+group = 'com.ssclso'
+
+base {
+    archivesName = 'ssc-lso-compat'
+}
+
+java.toolchain.languageVersion = JavaLanguageVersion.of(17)
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+println "Java: ${System.getProperty 'java.version'}, JVM: ${System.getProperty 'java.vm.version'} (${System.getProperty 'java.vendor'}), Arch: ${System.getProperty 'os.arch'}"
+
+minecraft {
+    mappings channel: 'official', version: '1.20.1'
+
+    runs {
+        client {
+            workingDirectory project.file('run')
+            property 'forge.logging.markers', 'REGISTRIES'
+            property 'forge.logging.console.level', 'debug'
+            mods {
+                ssc_lso_compat {
+                    source sourceSets.main
+                }
+            }
+        }
+        server {
+            workingDirectory project.file('run')
+            property 'forge.logging.markers', 'REGISTRIES'
+            property 'forge.logging.console.level', 'debug'
+            mods {
+                ssc_lso_compat {
+                    source sourceSets.main
+                }
+            }
+        }
+    }
+}
+
+repositories {
+    maven { url = 'https://api.modrinth.com/maven' }
+    mavenCentral()
+}
+
+dependencies {
+    minecraft 'net.minecraftforge:forge:1.20.1-47.2.0'
+
+    // LSO（Legendary Survival Overhaul）1.20.1 Forge 版，编译期仅需要它的 API + mixin 目标类
+    compileOnly fg.deobf('maven.modrinth:legendary-survival-overhaul:1.20.1-2.4.7')
+
+    // SSC 通过运行时反射访问，编译期不依赖 SSC / CCA / Apoli / Fabric API
+}
+
+jar {
+    manifest {
+        attributes([
+            "Specification-Title"     : "SscLsoCompat",
+            "Specification-Vendor"    : "ssclso",
+            "Specification-Version"   : "1",
+            "Implementation-Title"    : project.name,
+            "Implementation-Version"  : version,
+            "Implementation-Vendor"   : "ssclso",
+            "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+        ])
+    }
+}
+
+jar.finalizedBy('reobfJar')
+

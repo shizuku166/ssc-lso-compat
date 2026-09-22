@@ -1,0 +1,45 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="MIT"
+
+[[mods]]
+modId="ssc_lso_compat"
+version="${file.jarVersion}"
+displayName="SSC LSO Compat"
+description='''Shape Shifter Curse × Legendary Survival Overhaul 兼容扩展。
+玩家处于 SSC 美西螈形态（axolotl_1/2/3，形态 id 1~3）且进水时，获得 LSO 内置温度免疫（TEMPERATURE_IMMUNITY）恒温 buff，不中暑不冻伤。
+通过 SscLsoCompatApi 可注册更多水生形态。'''
+authors="Marvis"
+credits="Thanks: sfiomn(LSO) / onixary & xu233333(SSC)"
+
+[[dependencies.ssc_lso_compat]]
+modId="forge"
+type="required"
+mandatory=true
+versionRange="[47,)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.ssc_lso_compat]]
+modId="minecraft"
+type="required"
+mandatory=true
+versionRange="[1.20.1,1.20.2)"
+ordering="NONE"
+side="BOTH"
+
+[[dependencies.ssc_lso_compat]]
+modId="legendarysurvivaloverhaul"
+type="required"
+mandatory=true
+versionRange="[1.20.1,1.20.2)"
+ordering="AFTER"
+side="BOTH"
+
+[[dependencies.ssc_lso_compat]]
+modId="shape-shifter-curse"
+type="optional"
+mandatory=false
+versionRange="[1,)"
+ordering="AFTER"
+side="BOTH"
