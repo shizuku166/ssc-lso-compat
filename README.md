@@ -1,3 +1,14 @@
+---
+AIGC:
+    Label: "1"
+    ContentProducer: 001191440300708461136T1XGW3
+    ProduceID: 765b53ad3e7e5d040fa182985ee7c7e9_dd684da0b65711f1ba48525400248c00
+    ReservedCode1: rhC5Z5Ql+3XGN53oN/dEIMKdbQ2mlJXUABMEDZXu3T4MTYREvTSn/klmRIRojj2zHcSP0gkUVHpiTKDWK6l4y93+PpRL8xilN+mR0PySmSRtIKWhl2e+3vqTWkPw0b8enyiB0T3kvxIwzc82jvDiqd8YjHlWrd7x+bE4bXkfojlWLU7WwFGAsu70p0A=
+    ContentPropagator: 001191440300708461136T1XGW3
+    PropagateID: 765b53ad3e7e5d040fa182985ee7c7e9_dd684da0b65711f1ba48525400248c00
+    ReservedCode2: rhC5Z5Ql+3XGN53oN/dEIMKdbQ2mlJXUABMEDZXu3T4MTYREvTSn/klmRIRojj2zHcSP0gkUVHpiTKDWK6l4y93+PpRL8xilN+mR0PySmSRtIKWhl2e+3vqTWkPw0b8enyiB0T3kvxIwzc82jvDiqd8YjHlWrd7x+bE4bXkfojlWLU7WwFGAsu70p0A=
+---
+
 # SSC LSO Compat
 
 **Shape Shifter Curse（SSC）× Legendary Survival Overhaul（LSO）兼容扩展（Forge 1.20.1）**
@@ -40,11 +51,11 @@
 gradle build
 ```
 
-产物：`build/libs/ssc-lso-compat-0.1.jar`
+产物：`build/libs/ssc-lso-compat-0.2-beta.jar`
 
 ## 安装
 
-1. 把 `ssc-lso-compat-0.1.jar` 放入版本隔离目录的 `mods` 文件夹；
+1. 把 `ssc-lso-compat-0.2-beta.jar` 放入版本隔离目录的 `mods` 文件夹；
 2. 确保同目录已有 **LSO 1.20.1** 与 **SSC connector 分支构建**；
 3. 升级前请移除旧版 `ssc-lso-compat-*.jar`（避免同 modId 多版本共存）。
 
@@ -72,3 +83,4 @@ SscLsoCompatApi.registerAquaticForm(new ResourceLocation("shape-shifter-curse", 
 - 本 mod 以 **MIT** 协议开源，详见 [LICENSE](LICENSE)。
 - 本 mod **仅调用** Legendary Survival Overhaul（LSO）的**公开 API** 与 Shape Shifter Curse（SSC）的运行时反射互操作，**不含** LSO / SSC 的任何代码、资源或数据。
 - LSO 本身为 **All Rights Reserved**，版权归原作者 sfiomn 所有；SSC 为 **MIT** 协议，版权归原团队所有。
+*（内容由AI生成，仅供参考）*

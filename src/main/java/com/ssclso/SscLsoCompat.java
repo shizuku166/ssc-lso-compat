@@ -57,7 +57,7 @@ public class SscLsoCompat {
         debugTickCounter++;
         boolean debug = debugTickCounter % 100 == 0;
         ResourceLocation debugFormId = debug ? com.ssclso.compat.SscFormHelper.getCurrentFormId(player) : null;
-        boolean debugInWater = debug && player.isInWater();
+        boolean debugInWater = debug && player.isInWaterRainOrBubble();
         boolean shouldApply = ThermoHandler.shouldApplyAxolotlThermo(player);
         if (debug) {
             String line = String.format("[SscLsoCompat] debug formId=%s inWater=%s aquatic=%s shouldApply=%s diag=[%s]",
