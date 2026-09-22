@@ -5,10 +5,10 @@ license="MIT"
 [[mods]]
 modId="ssc_lso_compat"
 version="${file.jarVersion}"
-displayName="SSC LSO Compat Beta"
-description='''Shape Shifter Curse × Legendary Survival Overhaul 兼容扩展（Beta 测试版）。
-玩家处于 SSC 美西螈形态（axolotl_1/2/3，形态 id 1~3）且湿润（进水/淋雨/气泡柱）时，获得 LSO 内置温度免疫（TEMPERATURE_IMMUNITY）恒温 buff，不中暑不冻伤。
-0.2-beta：修复雨天淋雨仍掉寒冷值的问题。
+displayName="SSC LSO Compat 御寒版"
+description='''Shape Shifter Curse × Legendary Survival Overhaul 兼容扩展（御寒版）。
+玩家处于 SSC 美西螈形态（axolotl_1/2/3，形态 id 1~3）且进水或淋雨时，获得 LSO 内置御寒（COLD_IMMUNITY）buff，单次 6 秒、剩余不足 1 秒时续期；出水/雨停不主动移除，buff 自然消散（最长 6 秒）；气泡柱不再触发。
+口渴分级：完全体（axolotl_3）停用口渴系统不显示口渴条；幼体（axolotl_0/1/2）保留口渴条但免疫 LSO 干渴 debuff；其他形态正常口渴。
 通过 SscLsoCompatApi 可注册更多水生形态。'''
 authors="Marvis"
 credits="Thanks: sfiomn(LSO) / onixary & xu233333(SSC)"

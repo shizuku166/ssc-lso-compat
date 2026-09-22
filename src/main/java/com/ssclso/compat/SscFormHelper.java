@@ -1,10 +1,8 @@
 package com.ssclso.compat;
 
-import com.mojang.logging.LogUtils;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Player;
 import net.minecraftforge.fml.ModList;
-import org.slf4j.Logger;
 
 import javax.annotation.Nullable;
 import java.lang.reflect.Field;
@@ -45,7 +43,6 @@ public final class SscFormHelper {
     private static boolean resolved = false;
     private static boolean available = false;
 
-    private static final Logger LOGGER = LogUtils.getLogger();
     private static String lastResolveError = "not-resolved";
 
     // ability 系统
@@ -80,13 +77,13 @@ public final class SscFormHelper {
                         : "abilityKey=" + (abilityComponentKey != null)
                         + " nfsKey=" + (nfsComponentKey != null);
                 if (!available) {
-                    LOGGER.error("[SscFormHelper] resolve failed: {}", lastResolveError);
+                    // 日志刷屏治理：不再向服务器后台打印，仅写文件供排查
                     FileLogger.log("[SscFormHelper] resolve failed: " + lastResolveError);
                 }
             } catch (Throwable t) {
                 available = false;
                 lastResolveError = "resolve-throw: " + t;
-                LOGGER.error("[SscFormHelper] resolve threw", t);
+                // 日志刷屏治理：不再向服务器后台打印，仅写文件供排查
                 FileLogger.log("[SscFormHelper] resolve threw: " + t, t);
             }
         }
@@ -168,7 +165,7 @@ public final class SscFormHelper {
             // 系统，此路仅作兜底，失败不再静默，记录以便排查。
             nfsComponentKey = null;
             nfsKeyGetMethod = null;
-            LOGGER.error("[SscFormHelper] nfs resolve threw", t);
+            // 日志刷屏治理：不再向服务器后台打印，仅写文件供排查
             FileLogger.log("[SscFormHelper] nfs resolve threw: " + t, t);
         }
     }
@@ -219,7 +216,7 @@ public final class SscFormHelper {
             }
             return ResourceLocation.tryParse(id.toString());
         } catch (Throwable t) {
-            LOGGER.error("[SscFormHelper] ability read threw", t);
+            // 日志刷屏治理：不再向服务器后台打印，仅写文件供排查
             FileLogger.log("[SscFormHelper] ability read threw: " + t, t);
             return null;
         }
@@ -245,7 +242,7 @@ public final class SscFormHelper {
             }
             return ResourceLocation.tryParse(id.toString());
         } catch (Throwable t) {
-            LOGGER.error("[SscFormHelper] nfs read threw", t);
+            // 日志刷屏治理：不再向服务器后台打印，仅写文件供排查
             FileLogger.log("[SscFormHelper] nfs read threw: " + t, t);
             return null;
         }
