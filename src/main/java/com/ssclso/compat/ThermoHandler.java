@@ -5,7 +5,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Player;
 
 /**
- * 美西螈御寒判定逻辑（0.3）：
+ * 美西螈御寒判定逻辑（0.2）：
  * <ol>
  *   <li>先读取 SSC 当前形态 id（美西螈形态 id 为 1~3，即 axolotl_1/2/3）；</li>
  *   <li>判断玩家是否为美西螈形态；</li>

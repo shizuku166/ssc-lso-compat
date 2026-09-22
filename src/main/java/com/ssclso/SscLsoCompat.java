@@ -15,7 +15,7 @@ import sfiomn.legendarysurvivaloverhaul.registry.MobEffectRegistry;
 /**
  * SSC（Shape Shifter Curse）× LSO（Legendary Survival Overhaul）兼容 mod。
  *
- * 核心行为（0.3）：
+ * 核心行为（0.2）：
  * <ul>
  *   <li>美西螈形态（axolotl_1/2/3）且进水/淋雨时，给予 LSO 内置御寒 buff
  *       （COLD_IMMUNITY），单次 6 秒、剩余不足 1 秒时续期；出水/雨停不主动
