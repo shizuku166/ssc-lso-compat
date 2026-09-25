@@ -82,5 +82,5 @@ SscLsoCompatApi.registerAquaticForm(new ResourceLocation("shape-shifter-curse", 
 
 - 本 mod 以 **MIT** 协议开源，详见 [LICENSE](LICENSE)。
 - 本 mod **仅调用** Legendary Survival Overhaul（LSO）的**公开 API** 与 Shape Shifter Curse（SSC）的运行时反射互操作，**不含** LSO / SSC 的任何代码、资源或数据。
-- LSO 本身为 **All Rights Reserved**，版权归原作者 sfiomn 所有；SSC 为 **MIT** 协议，版权归原团队所有。
+- LSO 本身为 **LGPL-2.1**，版权归原作者 sfiomn 所有；SSC 为 **MIT** 协议，版权归原团队所有。
 *（内容由AI生成，仅供参考）*
